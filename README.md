@@ -4,7 +4,7 @@
 
 Este projeto foi desenvolvido com o objetivo de consumir a API do GitHub para exibir informações detalhadas de um usuário, incluindo seu perfil e uma lista dos seus últimos 10 repositórios.
 
-Clique [AQUI](https://github-app-beta.vercel.app/) para acessar a aplicação e ver seu funcionamento.
+Link do projeto no Vercel: [https://github-app-beta.vercel.app/](https://github-app-beta.vercel.app/)
 
 ## Funcionalidades
 
