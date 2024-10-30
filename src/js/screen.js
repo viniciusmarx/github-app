@@ -9,7 +9,9 @@ export const screen = {
                                         </div>
                                       </div>`;
 		let repositoriesItems = "";
-		repositories.forEach((repo) => (repositoriesItems += `<li><a target="_blank" href"${repo.html_url}">${repo.name}</a></li>`));
+		repositories.forEach((repo) => {
+			repositoriesItems += `<li><a target="_blank" href="${repo.clone_url}">${repo.name}</a></li>`;
+		});
 
 		if (repositories.length > 0) {
 			this.userProfileElement.innerHTML += `<div class="repositories section">
