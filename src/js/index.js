@@ -1,21 +1,15 @@
 import { getUser } from "./services/user";
 import { getRepositories } from "./services/repositories";
-import { user } from "./objects/user";
-import { screen } from "./objects/screen";
+import { screen } from "./screen";
 
 export async function getUserData(username) {
 	try {
 		const userData = await getUser(username);
 		const repositories = await getRepositories(username);
-
-		user.setInfo(userData);
-		user.setRepositories(repositories);
-		console.log(user);
-
-		screen.renderUser(user);
+		screen.renderUser(userData, repositories);
 	} catch (error) {
-		const userInfo = "<h3>Usuário não encontrado</h3>";
 		console.log(error);
+		const userInfo = "<h3>Usuário não encontrado</h3>";
 		document.querySelector(".profile-data").innerHTML = userInfo;
 	}
 }
