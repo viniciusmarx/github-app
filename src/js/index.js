@@ -7,6 +7,7 @@ export async function getUserData(username) {
 		const userData = await getUser(username);
 		const repositories = await getRepositories(username);
 		screen.renderUser(userData, repositories);
+		console.log(repositories);
 	} catch (error) {
 		console.log(error);
 		const userInfo = "<h3>Usuário não encontrado</h3>";
