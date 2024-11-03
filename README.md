@@ -10,7 +10,7 @@ Link do projeto no Vercel: [https://github-app-beta.vercel.app/](https://github-
 
 -   Exibição das informações básicas do usuário, como avatar, nome e bio.
 -   Lista dos últimos 10 repositórios do usuário, com links para o GitHub.
--   Exibição dos últimos 10 eventos públicos do usuário, com o nome do repositório e a mensagem de commit.
+-   Exibição dos últimos 10 eventos públicos do usuário, com o nome do repositório e as mensagens de commit.
 -   Busca de usuário através de um campo de entrada, com atualização dinâmica dos dados.
 
 ## Tecnologias
