@@ -23,12 +23,16 @@ export const screen = {
 		});
 		let eventsItems = "";
 		events.forEach((event) => {
+			const eventName = event.repo.name;
+			const commits = event.payload.commits;
 			switch (event.type) {
 				case "PushEvent":
-					eventsItems += `<li><strong>${event.repo.name}</strong> -${event.payload.commits[0].message} </li>`;
+					commits.forEach((commit) => {
+						eventsItems += `<li><strong>${eventName}</strong> -${commit.message} </li>`;
+					});
 					break;
 				case "CreateEvent":
-					eventsItems += `<li><strong>${event.repo.name}</strong> - Sem mensagem de commit</li>`;
+					eventsItems += `<li><strong>${eventName}</strong> - Sem mensagem de commit</li>`;
 					break;
 			}
 		});
