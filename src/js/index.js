@@ -1,13 +1,14 @@
 import { getUser } from "./services/user";
 import { getRepositories } from "./services/repositories";
+import { getEvents } from "./services/events";
 import { screen } from "./screen";
 
 export async function getUserData(username) {
 	try {
 		const userData = await getUser(username);
 		const repositories = await getRepositories(username);
-		screen.renderUser(userData, repositories);
-		console.log(repositories);
+		const events = await getEvents(username);
+		screen.renderUser(userData, repositories, events);
 	} catch (error) {
 		console.log(error);
 		const userInfo = "<h3>Usuário não encontrado</h3>";

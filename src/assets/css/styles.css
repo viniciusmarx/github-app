@@ -119,7 +119,6 @@ main {
 
 .container .profile-data .repositories h2 {
     margin-bottom: 30px;
-    text-align: center;
 }
 
 .container .profile-data .repositories ul {
@@ -171,6 +170,17 @@ main {
     padding: 5px 10px;
     font-size: 14px;
     height: min-content;
+}
+
+/* EVENTS */
+
+.container .profile-data .events h2 {
+    margin-bottom: 30px;
+}
+
+.container .profile-data .events li {
+    margin-top: 10px;
+    text-align: left;
 }
 
 @media (max-width: 1280px) {

@@ -10,6 +10,7 @@ Link do projeto no Vercel: [https://github-app-beta.vercel.app/](https://github-
 
 -   Exibição das informações básicas do usuário, como avatar, nome e bio.
 -   Lista dos últimos 10 repositórios do usuário, com links para o GitHub.
+-   Exibição dos últimos 10 eventos públicos do usuário, com o nome do repositório e a mensagem de commit.
 -   Busca de usuário através de um campo de entrada, com atualização dinâmica dos dados.
 
 ## Tecnologias
@@ -58,11 +59,6 @@ Link do projeto no Vercel: [https://github-app-beta.vercel.app/](https://github-
 
 1. Digite o nome de usuário do GitHub no campo de busca e clique no botão de pesquisa ou pressione "Enter".
 2. O perfil e os repositórios do usuário serão exibidos na tela, caso o usuário seja encontrado.
-
-## Requisitos
-
--   Navegador atualizado
--   Node.js e npm instalados
 
 ## Observações
 

@@ -1,6 +1,6 @@
 export const screen = {
 	userProfileElement: document.querySelector(".profile-data"),
-	renderUser(user, repositories) {
+	renderUser(user, repositories, events) {
 		this.userProfileElement.innerHTML = `<div class="info">
                                                 <img src="${user.avatar_url}" alt="Foto de perfil do usuário"/>
                                                 <div class="data">
@@ -21,12 +21,30 @@ export const screen = {
                                     </div>
                                   </li>`;
 		});
+		let eventsItems = "";
+		events.forEach((event) => {
+			switch (event.type) {
+				case "PushEvent":
+					eventsItems += `<li><strong>${event.repo.name}</strong> -${event.payload.commits[0].message} </li>`;
+					break;
+				case "CreateEvent":
+					eventsItems += `<li><strong>${event.repo.name}</strong> - Sem mensagem de commit</li>`;
+					break;
+			}
+		});
 
 		if (repositories.length > 0) {
 			this.userProfileElement.innerHTML += `<div class="repositories section">
                                                     <h2>Repositórios</h2>
                                                     <ul>${repositoriesItems}</ul>
                                                   </div>`;
+		}
+
+		if (events.length > 0) {
+			this.userProfileElement.innerHTML += `<div class="events">
+		                                            <h2>Últimos eventos</h2>
+		                                            <ul>${eventsItems}</ul>
+		                                         </div>`;
 		}
 	},
 };
